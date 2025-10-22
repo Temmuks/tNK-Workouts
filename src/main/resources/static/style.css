@@ -1,0 +1,37 @@
+body {
+    align-items: center;
+    align-content: center;
+    text-align: center;
+    background-color: rgb(24, 24, 24);
+    color: rgb(0, 117, 133);
+    font-family: "Audiowide", sans-serif;
+}
+
+#header {
+    background: #00e1ff;
+    background: radial-gradient(circle, rgba(0, 225, 255, 1) 0%, rgba(0, 117, 133, 1) 100%);
+    padding: 20px;
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 25px;
+    color: rgb(14, 14, 14);
+    /* text-shadow: 5px 5px 10px rgb(39, 39, 39); */
+
+}
+
+.Workouts {
+    border: solid;
+    border-radius: 10px;
+    border-color: rgb(0, 117, 133);
+    background-color: rgb(43, 43, 43);
+    color: rgb(0, 117, 133);
+    margin: 10px;
+}
+
+#workoutArea {
+    align-content: center;
+}
+
+input {
+    background-color: rgb(53, 53, 53);
+    color: white;
+}

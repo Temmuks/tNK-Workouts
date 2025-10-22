@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http:/thymeleafe.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Audiowide">
+    <title>tNK Workouts</title>
+</head>
+
+<body>
+    <h1 id="header">tNK workouts!</h1>
+    <div class="container text-center">
+        <div id=workoutArea class="row justify-content-md-center">
+            <div class="Workouts col">
+                <h2>Push</h2>
+                <table class="table table-dark table-striped">
+                    <thead>
+                        <th scope="col">Style</th>
+                        <th scope="col">Weight</th>
+                        <th scope="col">New Weight</th>
+                        <th scope="col">Add</th>
+                    </thead>
+                    <tbody>
+                        <tr th:each="push : ${pushes}">
+                            <td th:text="${push.name}"></td>
+                            <td th:text="${push.getWeight}"></td>
+                            <form method="post" th:action="@{/new-push}" th:object="${newPush}">
+                                <input type="hidden" name="name" th:value="${push.getName}">
+                                <td><input type="text" th:field="*{weight}" style="max-width: 60px;"></td>
+                                <td><input type="submit" style="max-width: 60px; " value="Add"></td>
+                            </form>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="Workouts col">
+                <h2>Pull</h2>
+                <table class="table table-dark table-striped">
+                    <thead>
+                        <th scope="col">Style</th>
+                        <th scope="col">Weight</th>
+                        <th scope="col">New Weight</th>
+                        <th scope="col">Add</th>
+                    </thead>
+                    <tbody>
+                        <tr th:each="pull : ${pulls}">
+                            <td th:text="${pull.getName}"></td>
+                            <td th:text="${pull.getWeight}"></td>
+                            <form method="post" th:action="@{/new-pull}" th:object="${newPull}">
+                                <input type="hidden" name="name" th:value="${pull.getName}">
+                                <td><input type="text" th:field="*{weight}" style="max-width: 60px;"></td>
+                                <td><input type="submit" style="max-width: 60px; " value="Add"></td>
+                            </form>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="Workouts col">
+                <h2>Legs</h2>
+                <table class="table table-dark table-striped">
+                    <thead>
+                        <th scope="col">Style</th>
+                        <th scope="col">Weight</th>
+                        <th scope="col">New Weight</th>
+                        <th scope="col">Add</th>
+                    </thead>
+                    <tbody>
+                        <tr th:each="leg : ${legs}">
+                            <td th:text="${leg.getName}"></td>
+                            <td th:text="${leg.getWeight}"></td>
+                            <form method="post" th:action="@{/new-legs}" th:object="${newLegs}">
+                                <input type="hidden" name="name" th:value="${leg.getName}">
+                                <td><input type="text" th:field="*{weight}" style="max-width: 60px;"></td>
+                                <td><input type="submit" style="max-width: 60px; " value="Add"></td>
+                            </form>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
