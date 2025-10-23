@@ -30,7 +30,7 @@
                             <td th:text="${push.getWeight}"></td>
                             <form method="post" th:action="@{/new-push}" th:object="${newPush}">
                                 <input type="hidden" name="name" th:value="${push.getName}">
-                                <td><input type="text" th:field="*{weight}" style="max-width: 60px;"></td>
+                                <td><input type="number" th:field="*{weight}" style="max-width: 60px;"></td>
                                 <td><input type="submit" style="max-width: 60px; " value="Add"></td>
                             </form>
                         </tr>
@@ -52,7 +52,7 @@
                             <td th:text="${pull.getWeight}"></td>
                             <form method="post" th:action="@{/new-pull}" th:object="${newPull}">
                                 <input type="hidden" name="name" th:value="${pull.getName}">
-                                <td><input type="text" th:field="*{weight}" style="max-width: 60px;"></td>
+                                <td><input type="number" th:field="*{weight}" style="max-width: 60px;"></td>
                                 <td><input type="submit" style="max-width: 60px; " value="Add"></td>
                             </form>
                         </tr>
@@ -74,7 +74,7 @@
                             <td th:text="${leg.getWeight}"></td>
                             <form method="post" th:action="@{/new-legs}" th:object="${newLegs}">
                                 <input type="hidden" name="name" th:value="${leg.getName}">
-                                <td><input type="text" th:field="*{weight}" style="max-width: 60px;"></td>
+                                <td><input type="number" th:field="*{weight}" style="max-width: 60px;"></td>
                                 <td><input type="submit" style="max-width: 60px; " value="Add"></td>
                             </form>
                         </tr>
