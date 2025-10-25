@@ -7,10 +7,12 @@ import java.util.List;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.tNKWorkout.tNKWorkout.user.User;
+import org.springframework.web.bind.annotation.RequestBody;
 
 @Controller
 public class WorkoutController {
@@ -72,14 +74,23 @@ public class WorkoutController {
         return "redirect:/index";
     }
 
+    @PostMapping("/add-ppl")
+    public String addPpl() {
+        for (User user : users) {
+            if (user.getUserName().equals(loggedInUser)) {
+                user.initiatePpl();
+            }
+        }
+        return "redirect:/workouts";
+    }
+
     @PostMapping("/new-push")
     String newPush(@RequestParam(value = "name") String name,
             @RequestParam("weight") int weight) {
         System.out.println(loggedInUser);
         for (User user : users) {
-            if (user.getUserName().equals(loggedInUser)){
+            if (user.getUserName().equals(loggedInUser)) {
                 user.addPush(name, weight, LocalDateTime.now());
-            System.out.println("Added push to " + user.getUserName());
             }
         }
         return "redirect:/workouts";
@@ -88,10 +99,9 @@ public class WorkoutController {
     @PostMapping("/new-pull")
     String newPull(@RequestParam(value = "name") String name,
             @RequestParam("weight") int weight) {
-       for (User user : users) {
-            if (user.getUserName().equals(loggedInUser)){
+        for (User user : users) {
+            if (user.getUserName().equals(loggedInUser)) {
                 user.addPull(name, weight, LocalDateTime.now());
-            System.out.println("Added push to " + user.getUserName());
             }
         }
         return "redirect:/workouts";
@@ -100,10 +110,39 @@ public class WorkoutController {
     @PostMapping("/new-legs")
     String newLegs(@RequestParam(value = "name") String name,
             @RequestParam("weight") int weight) {
-       for (User user : users) {
-            if (user.getUserName().equals(loggedInUser)){
+        for (User user : users) {
+            if (user.getUserName().equals(loggedInUser)) {
                 user.addLegs(name, weight, LocalDateTime.now());
-            System.out.println("Added push to " + user.getUserName());
+            }
+        }
+        return "redirect:/workouts";
+    }
+
+    @PostMapping("/add-push")
+    public String addNewPush(@ModelAttribute Push push) {
+        for (User user : users) {
+            if (user.getUserName().equals(loggedInUser)) {
+                user.addPush(push.getName(), push.getWeight(), LocalDateTime.now());
+            }
+        }
+        return "redirect:/workouts";
+    }
+
+    @PostMapping("/add-pull")
+    public String addNewPull(@ModelAttribute Pull pull) {
+        for (User user : users) {
+            if (user.getUserName().equals(loggedInUser)) {
+                user.addPull(pull.getName(), pull.getWeight(), LocalDateTime.now());
+            }
+        }
+        return "redirect:/workouts";
+    }
+
+    @PostMapping("/add-legs")
+    public String addNewLegs(@ModelAttribute Legs legs) {
+        for (User user : users) {
+            if (user.getUserName().equals(loggedInUser)) {
+                user.addLegs(legs.getName(), legs.getWeight(), LocalDateTime.now());
             }
         }
         return "redirect:/workouts";

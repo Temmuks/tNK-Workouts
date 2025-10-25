@@ -15,17 +15,17 @@
     <h1 id="header">tNK-workouts!</h1>
     <div class="container text-center">
         <div class="row align-items-center justify-content-center">
-                <div id="loginArea" class="col-md-12">
-                    <form method="post" th:action="@{/new-login}" th:object="${user}">
-                        <h2>Welcome!</h2>
-                        <label>Username:<br> <input type="text" th:field="*{userName}" class="input"></label><br>
-                        <label>Password:<br> <input type="password" th:field="*{password}" class="input"></label>
-                        <input type="submit" value="Start working out" id="loginBtn">
-                    </form>
-                </div>
-
+            <div id="loginArea" class="col-md-12">
+                <form method="post" th:action="@{/new-login}" th:object="${user}">
+                    <h2>Welcome!</h2>
+                    <label>Username:<br> <input type="text" th:field="*{userName}" class="input"></label><br>
+                    <label>Password:<br> <input type="password" th:field="*{password}" class="input"></label>
+                    <input type="submit" value="Start working out" id="loginBtn">
+                </form>
             </div>
+
         </div>
+    </div>
     </div>
 </body>
 

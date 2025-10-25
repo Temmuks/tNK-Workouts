@@ -21,7 +21,6 @@ public class User {
     public User(String userName, String password) {
         this.userName = userName;
         this.password = password;
-        initiatePpl();
     }
 
     public String getUserName() {

@@ -19,7 +19,7 @@
                 <h2>Push</h2>
                 <table class="table table-dark table-striped">
                     <thead>
-                        <th scope="col">Style</th>
+                        <th scope="col">Exercise</th>
                         <th scope="col">Weight</th>
                         <th scope="col">New Weight</th>
                         <th scope="col">Add</th>
@@ -36,12 +36,27 @@
                         </tr>
                     </tbody>
                 </table>
+                <table class="table table-dark table-striped">
+                    <thead>
+                        <th scope="col">Exercise</th>
+                        <th scope="col">Weight</th>
+                        <th scope="col">Add</th>
+                    </thead>
+                    <tbody>
+                        <form method="post" th:action="@{/add-push}" th:object="${newPush}">
+                            <td><input type="text" name="name" th:value="${name}"></td>
+                            <td><input type="number" th:field="*{weight}" style="max-width: 60px;"></td>
+                            <td><input type="submit" style="max-width: 60px; " value="Add"></td>
+                        </form>
+                    </tbody>
+                </table>
+
             </div>
             <div class="Workouts col">
                 <h2>Pull</h2>
                 <table class="table table-dark table-striped">
                     <thead>
-                        <th scope="col">Style</th>
+                        <th scope="col">Exercise</th>
                         <th scope="col">Weight</th>
                         <th scope="col">New Weight</th>
                         <th scope="col">Add</th>
@@ -58,12 +73,26 @@
                         </tr>
                     </tbody>
                 </table>
+                <table class="table table-dark table-striped">
+                    <thead>
+                        <th scope="col">Exercise</th>
+                        <th scope="col">Weight</th>
+                        <th scope="col">Add</th>
+                    </thead>
+                    <tbody>
+                        <form method="post" th:action="@{/add-pull}" th:object="${newPull}">
+                            <td><input type="text" name="name" th:value="${name}"></td>
+                            <td><input type="number" th:field="*{weight}" style="max-width: 60px;"></td>
+                            <td><input type="submit" style="max-width: 60px; " value="Add"></td>
+                        </form>
+                    </tbody>
+                </table>
             </div>
             <div class="Workouts col">
                 <h2>Legs</h2>
                 <table class="table table-dark table-striped">
                     <thead>
-                        <th scope="col">Style</th>
+                        <th scope="col">Exercise</th>
                         <th scope="col">Weight</th>
                         <th scope="col">New Weight</th>
                         <th scope="col">Add</th>
@@ -80,11 +109,33 @@
                         </tr>
                     </tbody>
                 </table>
+                <table class="table table-dark table-striped">
+                    <thead>
+                        <th scope="col">Exercise</th>
+                        <th scope="col">Weight</th>
+                        <th scope="col">Add</th>
+                    </thead>
+                    <tbody>
+                        <form method="post" th:action="@{/add-legs}" th:object="${newLegs}">
+                            <td><input type="text" name="name" th:value="${name}"></td>
+                            <td><input type="number" th:field="*{weight}" style="max-width: 60px;"></td>
+                            <td><input type="submit" style="max-width: 60px; " value="Add"></td>
+                        </form>
+                    </tbody>
+                </table>
             </div>
         </div>
-        <form method="post" th:action="@{/logout}">
-            <input type="submit" value="Logout">
-        </form>
+        <div class="col">
+            <form method="post" th:action="@{/add-ppl}">
+                <select >Scheme
+                    <option>Push/pull/legs</option>
+                </select>
+                <input type="submit" value="Add Scheme">
+            </form>
+            <form method="post" th:action="@{/logout}">
+                <input type="submit" value="Logout">
+            </form>
+        </div>
     </div>
 </body>
 
