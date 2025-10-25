@@ -19,7 +19,7 @@ public class PullService {
     public static List<Pull> getLatestPullsByType() {
         return pulls.stream()
             .collect(Collectors.toMap(
-                Pull::getName, // group by name (x, y, z)
+                Pull::getName,
                 push -> push,  // map value is the push object
                 (p1, p2) -> p1.getDate().isAfter(p2.getDate()) ? p1 : p2 // keep the latest
             ))

@@ -13,7 +13,6 @@ public class LegService {
         legs.add(new Legs("Benspark", 55, date));
         legs.add(new Legs("Knäböj", 70, date));
         legs.add(new Legs("Crunches", 5, date));
-
     }
 
     public static List<Legs> getLatestLegsByType() {
