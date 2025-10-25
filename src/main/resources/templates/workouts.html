@@ -12,7 +12,7 @@
 </head>
 
 <body>
-    <h1 id="header">tNK workouts!</h1>
+    <h1 id="header">Welcome <span th:text="${loggedInUser}"></span></h1>
     <div class="container text-center">
         <div id=workoutArea class="row justify-content-md-center">
             <div class="Workouts col">
@@ -82,6 +82,9 @@
                 </table>
             </div>
         </div>
+        <form method="post" th:action="@{/logout}">
+            <input type="submit" value="Logout">
+        </form>
     </div>
 </body>
 

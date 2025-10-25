@@ -14,6 +14,7 @@ body {
     border-bottom-left-radius: 25px;
     border-bottom-right-radius: 25px;
     color: rgb(14, 14, 14);
+
     /* text-shadow: 5px 5px 10px rgb(39, 39, 39); */
 
 }
@@ -34,4 +35,37 @@ body {
 input {
     background-color: rgb(53, 53, 53);
     color: white;
+}
+
+#loginArea {
+    margin-top: 150px;
+    background: #00e1ff;
+    background: radial-gradient(circle, rgba(0, 225, 255, 1) 0%, rgba(0, 117, 133, 1) 100%);
+    max-width: 400px;
+    min-height: 300px;
+    color: rgb(0, 0, 0);
+    border-radius: 30px;
+    box-shadow: 5px 5px 5px rgb(14, 14, 14);
+    border: solid;
+    border-color: rgb(0, 117, 133);
+    padding: 10px;
+    padding-top: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+#loginBtn {
+    border: solid;
+    border-color: rgb(0, 117, 133);
+    margin-top: 10px;
+    border-radius: 10px;
+    min-width: 100px;
+}
+
+.input {
+    max-width: 200px;
+    text-align: center;
+    border: solid;
+    border-color: rgb(0, 117, 133);
+    border-radius: 15px;
 }
